@@ -32,10 +32,14 @@
         
     </div>
     <script>
+<script>
 const card = document.querySelector('.card');
 
-card.addEventListener('click', function () {
+card.addEventListener('touchend', function(event) {
+    event.preventDefault();
     this.classList.toggle('active');
+});
+</script>
 });
 </script>
     
