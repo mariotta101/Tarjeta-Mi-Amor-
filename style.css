@@ -2,44 +2,50 @@
     font-family: "Madimi One", sans-serif;
     font-weight: 400;
     font-style: normal;
-  }
-  
+}
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Ubuntu", sans-serif;
-
 }
-body{
+
+body {
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(211 , 211, 211);
+    background-color: rgb(211, 211, 211);
 }
-.contanier{
+
+.contanier {
     height: 100vh;
     max-width: 1200px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-
 }
-.card{
+
+.card {
     height: 280px;
     width: 300px;
     margin: 80px;
     transition: 300ms;
     cursor: pointer;
-    
-
 }
-.card :hover{
+
+/* EFECTO PARA COMPUTADOR */
+.card:hover {
     transform: scale(1.1);
 }
-.personaje{
+
+/* EFECTO PARA IPHONE */
+.card.active {
+    transform: scale(1.1);
+}
+
+.personaje {
     height: 350px;
     width: 300px;
     display: flex;
@@ -49,10 +55,9 @@ body{
     background-color: #00a5ec;
     transition: 300ms;
     position: absolute;
-
 }
 
-.imagen_personaje{
+.imagen_personaje {
     height: 270px;
     width: 220px;
     background-image: url(img/abrazo.jpg);
@@ -61,11 +66,34 @@ body{
     transition: 300ms;
     filter: drop-shadow(5px -4px 10px #000);
 }
-.imagen_personaje:hover{
-    color: cadetblue;
-    background-color: #000;
+
+/* CAMBIO DE IMAGEN CON MOUSE */
+.card:hover .imagen_personaje {
+    transform: translate(-5px);
+    transition: 300ms;
+    filter: none;
+    background-image: url(img/corazon.jpg);
 }
-.detalle{
+
+/* CAMBIO DE IMAGEN CON TOQUE EN IPHONE */
+.card.active .imagen_personaje {
+    transform: translate(-5px);
+    transition: 300ms;
+    filter: none;
+    background-image: url(img/corazon.jpg);
+}
+
+/* CAMBIO DE FONDO CON MOUSE */
+.card:hover .personaje {
+    background-image: radial-gradient(white, rgb(255, 0, 211));
+}
+
+/* CAMBIO DE FONDO CON TOQUE EN IPHONE */
+.card.active .personaje {
+    background-image: radial-gradient(white, rgb(255, 0, 211));
+}
+
+.detalle {
     height: 200px;
     width: 300px;
     background-color: white;
@@ -77,54 +105,40 @@ body{
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
     transition: 300ms;
-
-
-
 }
 
-.card :hover .imagen_personaje{
-    transform: translate(-5px);
-    transition: 300ms;
-    filter: none;
-    background-image: url(img/corazon.jpg);
-}
-.card :hover .personaje{
-    background-image: radial-gradient(white, rgb(255, 0, 211) );
-}
-
-h2{
+h2 {
     display: flex;
     align-items: center;
     justify-items: center;
 }
 
-p{
+p {
     margin: auto;
     width: 90%;
     font-size: 12px;
 }
+
 .btn {
     width: 100px;
     margin: auto;
-    
     background: #3498db;
     background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
     background-image: -moz-linear-gradient(top, #3498db, #2980b9);
     background-image: -ms-linear-gradient(top, #3498db, #2980b9);
     background-image: -o-linear-gradient(top, #3498db, #2980b9);
     background-image: linear-gradient(to bottom, #3498db, #2980b9);
-    -webkit-border-radius: 10;
-    -moz-border-radius: 10;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
     border-radius: 10px;
     font-family: Arial;
     color: #ffffff;
     font-size: 20px;
     padding: 10px 20px 10px 20px;
     text-decoration: none;
-  }
-  
-  .btn:hover {
-    
+}
+
+.btn:hover {
     background: #3cb0fd;
     background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
     background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
@@ -132,5 +146,4 @@ p{
     background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
     background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
     text-decoration: none;
-  }
-
+}
