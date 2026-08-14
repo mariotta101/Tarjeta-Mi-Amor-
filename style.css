@@ -4,12 +4,18 @@
     font-style: normal;
 }
 
+
+/* =========================
+   CONFIGURACIÓN GENERAL
+   ========================= */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Ubuntu", sans-serif;
 }
+
 
 body {
     height: 100vh;
@@ -19,13 +25,23 @@ body {
     background-color: rgb(211, 211, 211);
 }
 
-.contanier {
+
+/* =========================
+   CONTENEDOR
+   ========================= */
+
+.container {
     height: 100vh;
     max-width: 1200px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
 }
+
+
+/* =========================
+   TARJETA
+   ========================= */
 
 .card {
     height: 280px;
@@ -35,15 +51,10 @@ body {
     cursor: pointer;
 }
 
-/* EFECTO PARA COMPUTADOR */
-.card:hover {
-    transform: scale(1.1);
-}
 
-/* EFECTO PARA IPHONE */
-.card.active {
-    transform: scale(1.1);
-}
+/* =========================
+   PERSONAJE
+   ========================= */
 
 .personaje {
     height: 350px;
@@ -57,6 +68,11 @@ body {
     position: absolute;
 }
 
+
+/* =========================
+   IMAGEN
+   ========================= */
+
 .imagen_personaje {
     height: 270px;
     width: 220px;
@@ -67,31 +83,10 @@ body {
     filter: drop-shadow(5px -4px 10px #000);
 }
 
-/* CAMBIO DE IMAGEN CON MOUSE */
-.card:hover .imagen_personaje {
-    transform: translate(-5px);
-    transition: 300ms;
-    filter: none;
-    background-image: url(img/corazon.jpg);
-}
 
-/* CAMBIO DE IMAGEN CON TOQUE EN IPHONE */
-.card.active .imagen_personaje {
-    transform: translate(-5px);
-    transition: 300ms;
-    filter: none;
-    background-image: url(img/corazon.jpg);
-}
-
-/* CAMBIO DE FONDO CON MOUSE */
-.card:hover .personaje {
-    background-image: radial-gradient(white, rgb(255, 0, 211));
-}
-
-/* CAMBIO DE FONDO CON TOQUE EN IPHONE */
-.card.active .personaje {
-    background-image: radial-gradient(white, rgb(255, 0, 211));
-}
+/* =========================
+   DETALLE
+   ========================= */
 
 .detalle {
     height: 200px;
@@ -107,11 +102,71 @@ body {
     transition: 300ms;
 }
 
+
+/* =========================
+   COMPUTADOR
+   HOVER CON MOUSE
+   ========================= */
+
+@media (hover: hover) and (pointer: fine) {
+
+    .card:hover {
+        transform: scale(1.1);
+    }
+
+    .card:hover .imagen_personaje {
+        transform: translate(-5px);
+        filter: none;
+        background-image: url(img/corazon.jpg);
+    }
+
+    .card:hover .personaje {
+        background-image: radial-gradient(
+            white,
+            rgb(255, 0, 211)
+        );
+    }
+
+}
+
+
+/* =========================
+   IPHONE / CELULAR
+   TOQUE CON EL DEDO
+   ========================= */
+
+@media (hover: none) and (pointer: coarse) {
+
+    .card.active {
+        transform: scale(1.1);
+    }
+
+    .card.active .imagen_personaje {
+        transform: translate(-5px);
+        filter: none;
+        background-image: url(img/corazon.jpg);
+    }
+
+    .card.active .personaje {
+        background-image: radial-gradient(
+            white,
+            rgb(255, 0, 211)
+        );
+    }
+
+}
+
+
+/* =========================
+   TEXTOS
+   ========================= */
+
 h2 {
     display: flex;
     align-items: center;
     justify-items: center;
 }
+
 
 p {
     margin: auto;
@@ -119,18 +174,50 @@ p {
     font-size: 12px;
 }
 
+
+/* =========================
+   BOTÓN
+   ========================= */
+
 .btn {
     width: 100px;
     margin: auto;
+
     background: #3498db;
-    background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
-    background-image: -moz-linear-gradient(top, #3498db, #2980b9);
-    background-image: -ms-linear-gradient(top, #3498db, #2980b9);
-    background-image: -o-linear-gradient(top, #3498db, #2980b9);
-    background-image: linear-gradient(to bottom, #3498db, #2980b9);
+    background-image: -webkit-linear-gradient(
+        top,
+        #3498db,
+        #2980b9
+    );
+
+    background-image: -moz-linear-gradient(
+        top,
+        #3498db,
+        #2980b9
+    );
+
+    background-image: -ms-linear-gradient(
+        top,
+        #3498db,
+        #2980b9
+    );
+
+    background-image: -o-linear-gradient(
+        top,
+        #3498db,
+        #2980b9
+    );
+
+    background-image: linear-gradient(
+        to bottom,
+        #3498db,
+        #2980b9
+    );
+
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
+
     font-family: Arial;
     color: #ffffff;
     font-size: 20px;
@@ -138,12 +225,44 @@ p {
     text-decoration: none;
 }
 
+
+/* =========================
+   BOTÓN HOVER
+   ========================= */
+
 .btn:hover {
+
     background: #3cb0fd;
-    background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
-    background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
-    background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
-    background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
-    background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+
+    background-image: -webkit-linear-gradient(
+        top,
+        #3cb0fd,
+        #3498db
+    );
+
+    background-image: -moz-linear-gradient(
+        top,
+        #3cb0fd,
+        #3498db
+    );
+
+    background-image: -ms-linear-gradient(
+        top,
+        #3cb0fd,
+        #3498db
+    );
+
+    background-image: -o-linear-gradient(
+        top,
+        #3cb0fd,
+        #3498db
+    );
+
+    background-image: linear-gradient(
+        to bottom,
+        #3cb0fd,
+        #3498db
+    );
+
     text-decoration: none;
 }
